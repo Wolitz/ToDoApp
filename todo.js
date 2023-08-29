@@ -1,13 +1,16 @@
 function onClick(){
     var add = document.getElementById("myText").value;
+    const dateInput = document.getElementById('myDate');
+    console.log(dateInput.value)
     var node = document.createElement('li');
     var but = document.createElement('button');
+
 
     but.style.cssText += ' background-color: red;border: none;color: white;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 12px;';
     
 
 
-    node.appendChild(document.createTextNode(add));
+    node.appendChild(document.createTextNode(add + " " + dateInput.value));
     but.appendChild(document.createTextNode('-'));
 
 
