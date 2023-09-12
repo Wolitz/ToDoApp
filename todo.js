@@ -6,14 +6,14 @@ function onClick() {
     var text = document.createElement('p'); 
     var date = document.createElement('input');
     date.type = 'date';
-    date.value  = dateInput;
+    date.value = dateInput.value; 
     var but = document.createElement('button');
 
     but.style.cssText += 'text-align:right;background-color: red; border: none; color: white; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 12px;';
 
     hone.appendChild(document.createTextNode("To-Do:"));
     text.appendChild(document.createTextNode(add));
-    date.appendChild(document.createTextNode( date.value));
+    date.appendChild(document.createTextNode(date.value));
     but.appendChild(document.createTextNode("remove"));
 
     li.appendChild(hone); 
@@ -22,15 +22,14 @@ function onClick() {
     li.appendChild(but);
 
     var ul = document.querySelector('ul');
-    ul.appendChild(li); 
+    ul.appendChild(li);
+
+    but.addEventListener("click", function() {
+        ul.removeChild(li); 
+    });
 }
 
 
-
-
-function Delete(){
-    
-}
 
 
 // Get the elements by their ID
