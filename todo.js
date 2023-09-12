@@ -1,23 +1,32 @@
-function onClick(){
+function onClick() {
     var add = document.getElementById("myText").value;
     const dateInput = document.getElementById('myDate');
-    console.log(dateInput.value)
-    var node = document.createElement('li');
+    var li = document.createElement('li'); 
+    var hone = document.createElement('h1');
+    var text = document.createElement('p'); 
+    var date = document.createElement('input');
+    date.type = 'date';
+    date.value  = dateInput;
     var but = document.createElement('button');
 
+    but.style.cssText += 'text-align:right;background-color: red; border: none; color: white; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; border-radius: 12px;';
 
-    but.style.cssText += ' background-color: red;border: none;color: white;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;border-radius: 12px;';
-    
+    hone.appendChild(document.createTextNode("To-Do:"));
+    text.appendChild(document.createTextNode(add));
+    date.appendChild(document.createTextNode( date.value));
+    but.appendChild(document.createTextNode("remove"));
 
+    li.appendChild(hone); 
+    li.appendChild(text);
+    li.appendChild(date);
+    li.appendChild(but);
 
-    node.appendChild(document.createTextNode(add + " " + dateInput.value));
-    but.appendChild(document.createTextNode('-'));
-
-
-    document.querySelector('ul').appendChild(node); 
-    document.querySelector('ul').appendChild(but); 
-
+    var ul = document.querySelector('ul');
+    ul.appendChild(li); 
 }
+
+
+
 
 function Delete(){
     
